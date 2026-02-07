@@ -1,0 +1,20 @@
+{
+  "name": "rails_pbt-example",
+  // Rails公式のDevContainerを利用
+  "image": "ghcr.io/rails/devcontainer/images/ruby:3.4.8",
+  "mounts": [
+    "source=${localEnv:HOME}/.agent/codex/.codex,target=/home/vscode/.codex,type=bind,consistency=cached",
+  ],
+  "features": {
+    // Node.jsはfeatureで入れておく
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "24.12.0"
+    },
+    // curlなどのツールを導入しておく
+    "ghcr.io/devcontainers/features/common-utils:2": {}
+  },
+  // 外部からコンテナのRailsへアクセスできるようポートフォワードする
+  "forwardPorts": [3000],
+  // RubyMine向けのワークアラウンドやnpm installするため、postCreateCommandを用意する
+  "postCreateCommand": ".devcontainer/postCreateCommand.sh",
+}
