@@ -22,4 +22,6 @@ end
 
 group :test do
   gem "rspec-parameterized"
+
+  gem "prop_check"
 end
