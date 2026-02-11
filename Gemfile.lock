@@ -154,6 +154,7 @@ GEM
       parser
       rouge
       unparser
+    prop_check (1.0.2)
     psych (5.3.1)
       date
       stringio
@@ -280,6 +281,7 @@ PLATFORMS
 
 DEPENDENCIES
   debug
+  prop_check
   puma (>= 5.0)
   rails (~> 8.1.2)
   rspec-parameterized
